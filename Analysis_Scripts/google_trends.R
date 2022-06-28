@@ -48,15 +48,14 @@ winter <- interval(ymd("2022-01-01"), ymd("2022-03-31"))
 spring <- interval(ymd("2022-04-01"), ymd("2022-06-27"))
 
 
-interest <- interest1 %>%
+interest1 <- interest1 %>%
   mutate(season = if_else(ymd(date) %within% fall =="TRUE", "fall", 
                           if_else(ymd(date) %within% winter =="TRUE", "winter",
                                   if_else(ymd(date) %within% spring == "TRUE", "spring",
-                                          if_else(ymd(date) %within% spring_old ==TRUE, "spring_old", "summer"))))) %>%
-  group_by(ID, season, book) %>%
-  summarize(av_interest=mean(interest))
+                                          if_else(ymd(date) %within% spring_old ==TRUE, "spring_old", "summer"))))) 
 
-ban_interest<-left_join(interest, books_dates, by="ID") %>%
+
+ban_interest<-left_join(interest1, books_dates, by="ID") %>%
   rename(ban_date= "Quarter")
 
 
@@ -74,13 +73,44 @@ ban_interest <- ban_interest %>%
   mutate(ban_period = if_else(ban_date == "summer" & season == "fall", "ban +1", ban_period))
 
 
+# Produce first Plot 
+
 ban_interest %>%
-  filter(!ban_period=="0") %>%
+  group_by(ID, ban_period, book) %>%
+  summarize(av_interest=mean(interest))%>%
   ggplot(aes(x=factor(ban_period, level=c("ban -1", "ban", "ban +1")), y=av_interest, group=ID, color=ID))+
   geom_point()+
   geom_line()
 
 
-aes(x = factor(Species, level = c('virginica', 'versicolor', 'setosa')), y = Petal.Width))
+# Produce significance table 
+
+sig_test<- ban_interest %>%
+  select(ID, ban_period, interest, date, book)
+
+sig_test1<- sig_test %>%
+  filter(ban_period != "ban +1")
+
+lapply(split(sig_test1, factor(sig_test1$ID)), function(x)t.test(data=x, interest~ban_period, paired=FALSE))
+
+sig_test2<- sig_test %>%
+  filter(ban_period != "ban -1")
+
+lapply(split(sig_test2, factor(sig_test2$ID)), function(x)t.test(data=x, interest~ban_period, paired=FALSE))
+
+
+ban_sig <- xtabs(av_interest ~ID + ban_period, data=ban_interest)
+
+ban_sig <- as.data.frame(ban_sig) %>%
+  pivot_wider(names_from = ban_period, value=Freq)
+
+test <- ban_interest %>%
+  ungroup() %>%
+  select(-season, -ban_date, -time_frame, -Date) %>%
+  group_by(ID) %>%
+  pivot_wider(names_from = ban_period, values_from = av_interest) %>%
+  mutate(t.test= )
+
+
 
   
