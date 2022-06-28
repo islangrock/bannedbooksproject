@@ -1,0 +1,196 @@
+,ID,date,interest,book
+0,1,2021-07-04,71,Ace of Spades
+1,1,2021-07-11,73,Ace of Spades
+2,1,2021-07-18,86,Ace of Spades
+3,1,2021-07-25,77,Ace of Spades
+4,1,2021-08-01,73,Ace of Spades
+5,1,2021-08-08,71,Ace of Spades
+6,1,2021-08-15,74,Ace of Spades
+7,1,2021-08-22,68,Ace of Spades
+8,1,2021-08-29,70,Ace of Spades
+9,1,2021-09-05,72,Ace of Spades
+10,1,2021-09-12,78,Ace of Spades
+11,1,2021-09-19,71,Ace of Spades
+12,1,2021-09-26,82,Ace of Spades
+13,1,2021-10-03,93,Ace of Spades
+14,1,2021-10-10,87,Ace of Spades
+15,1,2021-10-17,74,Ace of Spades
+16,1,2021-10-24,73,Ace of Spades
+17,1,2021-10-31,74,Ace of Spades
+18,1,2021-11-07,84,Ace of Spades
+19,1,2021-11-14,72,Ace of Spades
+20,1,2021-11-21,82,Ace of Spades
+21,1,2021-11-28,77,Ace of Spades
+22,1,2021-12-05,81,Ace of Spades
+23,1,2021-12-12,76,Ace of Spades
+24,1,2021-12-19,83,Ace of Spades
+25,1,2021-12-26,100,Ace of Spades
+26,1,2022-01-02,79,Ace of Spades
+27,1,2022-01-09,86,Ace of Spades
+28,1,2022-01-16,73,Ace of Spades
+29,1,2022-01-23,60,Ace of Spades
+30,1,2022-01-30,68,Ace of Spades
+31,1,2022-02-06,74,Ace of Spades
+32,1,2022-02-13,72,Ace of Spades
+33,1,2022-02-20,70,Ace of Spades
+34,1,2022-02-27,73,Ace of Spades
+35,1,2022-03-06,73,Ace of Spades
+36,1,2022-03-13,66,Ace of Spades
+37,1,2022-03-20,69,Ace of Spades
+38,1,2022-03-27,73,Ace of Spades
+39,2,2021-04-04,32,Clap When You Land
+40,2,2021-04-11,26,Clap When You Land
+41,2,2021-04-18,28,Clap When You Land
+42,2,2021-04-25,45,Clap When You Land
+43,2,2021-05-02,39,Clap When You Land
+44,2,2021-05-09,100,Clap When You Land
+45,2,2021-05-16,39,Clap When You Land
+46,2,2021-05-23,22,Clap When You Land
+47,2,2021-05-30,16,Clap When You Land
+48,2,2021-06-06,4,Clap When You Land
+49,2,2021-06-13,19,Clap When You Land
+50,2,2021-06-20,29,Clap When You Land
+51,2,2021-06-27,33,Clap When You Land
+52,2,2021-07-04,27,Clap When You Land
+53,2,2021-07-11,27,Clap When You Land
+54,2,2021-07-18,21,Clap When You Land
+55,2,2021-07-25,18,Clap When You Land
+56,2,2021-08-01,24,Clap When You Land
+57,2,2021-08-08,43,Clap When You Land
+58,2,2021-08-15,42,Clap When You Land
+59,2,2021-08-22,12,Clap When You Land
+60,2,2021-08-29,23,Clap When You Land
+61,2,2021-09-05,24,Clap When You Land
+62,2,2021-09-12,47,Clap When You Land
+63,2,2021-09-19,26,Clap When You Land
+64,2,2021-09-26,14,Clap When You Land
+65,2,2021-10-03,35,Clap When You Land
+66,2,2021-10-10,38,Clap When You Land
+67,2,2021-10-17,30,Clap When You Land
+68,2,2021-10-24,25,Clap When You Land
+69,2,2021-10-31,41,Clap When You Land
+70,2,2021-11-07,23,Clap When You Land
+71,2,2021-11-14,28,Clap When You Land
+72,2,2021-11-21,21,Clap When You Land
+73,2,2021-11-28,20,Clap When You Land
+74,2,2021-12-05,35,Clap When You Land
+75,2,2021-12-12,36,Clap When You Land
+76,2,2021-12-19,21,Clap When You Land
+77,2,2021-12-26,28,Clap When You Land
+78,3,2021-07-04,45,The Poet X
+79,3,2021-07-11,36,The Poet X
+80,3,2021-07-18,57,The Poet X
+81,3,2021-07-25,39,The Poet X
+82,3,2021-08-01,47,The Poet X
+83,3,2021-08-08,54,The Poet X
+84,3,2021-08-15,56,The Poet X
+85,3,2021-08-22,47,The Poet X
+86,3,2021-08-29,46,The Poet X
+87,3,2021-09-05,44,The Poet X
+88,3,2021-09-12,66,The Poet X
+89,3,2021-09-19,44,The Poet X
+90,3,2021-09-26,61,The Poet X
+91,3,2021-10-03,66,The Poet X
+92,3,2021-10-10,26,The Poet X
+93,3,2021-10-17,59,The Poet X
+94,3,2021-10-24,83,The Poet X
+95,3,2021-10-31,70,The Poet X
+96,3,2021-11-07,68,The Poet X
+97,3,2021-11-14,80,The Poet X
+98,3,2021-11-21,55,The Poet X
+99,3,2021-11-28,72,The Poet X
+100,3,2021-12-05,59,The Poet X
+101,3,2021-12-12,100,The Poet X
+102,3,2021-12-19,34,The Poet X
+103,3,2021-12-26,27,The Poet X
+104,3,2022-01-02,64,The Poet X
+105,3,2022-01-09,67,The Poet X
+106,3,2022-01-16,70,The Poet X
+107,3,2022-01-23,47,The Poet X
+108,3,2022-01-30,90,The Poet X
+109,3,2022-02-06,66,The Poet X
+110,3,2022-02-13,33,The Poet X
+111,3,2022-02-20,61,The Poet X
+112,3,2022-02-27,64,The Poet X
+113,3,2022-03-06,78,The Poet X
+114,3,2022-03-13,82,The Poet X
+115,3,2022-03-20,43,The Poet X
+116,3,2022-03-27,52,The Poet X
+117,4,2021-10-03,66,The Poet X
+118,4,2021-10-10,26,The Poet X
+119,4,2021-10-17,59,The Poet X
+120,4,2021-10-24,83,The Poet X
+121,4,2021-10-31,70,The Poet X
+122,4,2021-11-07,68,The Poet X
+123,4,2021-11-14,80,The Poet X
+124,4,2021-11-21,55,The Poet X
+125,4,2021-11-28,72,The Poet X
+126,4,2021-12-05,59,The Poet X
+127,4,2021-12-12,100,The Poet X
+128,4,2021-12-19,34,The Poet X
+129,4,2021-12-26,27,The Poet X
+130,4,2022-01-02,64,The Poet X
+131,4,2022-01-09,67,The Poet X
+132,4,2022-01-16,70,The Poet X
+133,4,2022-01-23,47,The Poet X
+134,4,2022-01-30,90,The Poet X
+135,4,2022-02-06,66,The Poet X
+136,4,2022-02-13,33,The Poet X
+137,4,2022-02-20,61,The Poet X
+138,4,2022-02-27,64,The Poet X
+139,4,2022-03-06,78,The Poet X
+140,4,2022-03-13,82,The Poet X
+141,4,2022-03-20,43,The Poet X
+142,4,2022-03-27,52,The Poet X
+143,4,2022-04-03,46,The Poet X
+144,4,2022-04-10,74,The Poet X
+145,4,2022-04-17,68,The Poet X
+146,4,2022-04-24,85,The Poet X
+147,4,2022-05-01,46,The Poet X
+148,4,2022-05-08,56,The Poet X
+149,4,2022-05-15,74,The Poet X
+150,4,2022-05-22,75,The Poet X
+151,4,2022-05-29,54,The Poet X
+152,4,2022-06-05,58,The Poet X
+153,4,2022-06-12,42,The Poet X
+154,4,2022-06-19,23,The Poet X
+155,4,2022-06-26,0,The Poet X
+156,5,2021-10-03,66,The Poet X
+157,5,2021-10-10,26,The Poet X
+158,5,2021-10-17,59,The Poet X
+159,5,2021-10-24,83,The Poet X
+160,5,2021-10-31,70,The Poet X
+161,5,2021-11-07,68,The Poet X
+162,5,2021-11-14,80,The Poet X
+163,5,2021-11-21,55,The Poet X
+164,5,2021-11-28,72,The Poet X
+165,5,2021-12-05,59,The Poet X
+166,5,2021-12-12,100,The Poet X
+167,5,2021-12-19,34,The Poet X
+168,5,2021-12-26,27,The Poet X
+169,5,2022-01-02,64,The Poet X
+170,5,2022-01-09,67,The Poet X
+171,5,2022-01-16,70,The Poet X
+172,5,2022-01-23,47,The Poet X
+173,5,2022-01-30,90,The Poet X
+174,5,2022-02-06,66,The Poet X
+175,5,2022-02-13,33,The Poet X
+176,5,2022-02-20,61,The Poet X
+177,5,2022-02-27,64,The Poet X
+178,5,2022-03-06,78,The Poet X
+179,5,2022-03-13,82,The Poet X
+180,5,2022-03-20,43,The Poet X
+181,5,2022-03-27,52,The Poet X
+182,5,2022-04-03,46,The Poet X
+183,5,2022-04-10,74,The Poet X
+184,5,2022-04-17,68,The Poet X
+185,5,2022-04-24,85,The Poet X
+186,5,2022-05-01,46,The Poet X
+187,5,2022-05-08,56,The Poet X
+188,5,2022-05-15,74,The Poet X
+189,5,2022-05-22,75,The Poet X
+190,5,2022-05-29,54,The Poet X
+191,5,2022-06-05,58,The Poet X
+192,5,2022-06-12,42,The Poet X
+193,5,2022-06-19,23,The Poet X
+194,5,2022-06-26,0,The Poet X
