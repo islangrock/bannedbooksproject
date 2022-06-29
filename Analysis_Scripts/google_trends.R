@@ -39,7 +39,7 @@ write.csv(books_dates, file="~/Desktop/bannedbooksproject/data/booksbandates.csv
 
 ## now we run the python script for the Google API. 
 
-interest1 <- read.csv("~/Desktop/bannedbooksproject/data/interest_data/test.csv")
+interest1 <- read.csv("~/Desktop/bannedbooksproject/data/interest_data/ids_done.csv")
 
 spring_old <- interval(ymd("2021-04-01"), ymd("2021-06-30"))
 summer<- interval(ymd("2021-07-01"), ymd("2021-09-30"))
@@ -56,7 +56,7 @@ interest1 <- interest1 %>%
 
 
 ban_interest<-left_join(interest1, books_dates, by="ID") %>%
-  rename(ban_date= "Quarter")
+  dplyr::rename(ban_date= "Quarter")
 
 
 # if ban_date= Fall, ban = Fall, ban-1 = Summer, ban + 1 = Winter 
@@ -79,8 +79,20 @@ ban_interest %>%
   group_by(ID, ban_period, book) %>%
   summarize(av_interest=mean(interest))%>%
   ggplot(aes(x=factor(ban_period, level=c("ban -1", "ban", "ban +1")), y=av_interest, group=ID, color=ID))+
-  geom_point()+
+  geom_boxplot()+
   geom_line()
+
+
+df<-ban_interest %>%
+  group_by(ID, ban_period, book) %>%
+  summarize(av_interest=mean(interest)) %>%
+  pivot_wider(names_from=ban_period, values_from=av_interest)%>%
+  dplyr::rename(banpre="ban -1", banpost="ban +1")
+
+
+
+  mutate(delta1= (ban - banpre), delta2 = banpost-banpre, delta_combo=(ban+banpost-banpre))
+
 
 
 # Produce significance table 
@@ -91,26 +103,44 @@ sig_test<- ban_interest %>%
 sig_test1<- sig_test %>%
   filter(ban_period != "ban +1")
 
-lapply(split(sig_test1, factor(sig_test1$ID)), function(x)t.test(data=x, interest~ban_period, paired=FALSE))
+test1<-lapply(split(sig_test1, factor(sig_test1$ID)), function(x)t.test(data=x, interest~ban_period, paired=FALSE))
 
 sig_test2<- sig_test %>%
   filter(ban_period != "ban -1")
 
-lapply(split(sig_test2, factor(sig_test2$ID)), function(x)t.test(data=x, interest~ban_period, paired=FALSE))
+test2<-lapply(split(sig_test2, factor(sig_test2$ID)), function(x)t.test(data=x, interest~ban_period, paired=FALSE))
 
 
-ban_sig <- xtabs(av_interest ~ID + ban_period, data=ban_interest)
+library(plyr)
+detach(package:plyr)
 
-ban_sig <- as.data.frame(ban_sig) %>%
-  pivot_wider(names_from = ban_period, value=Freq)
-
-test <- ban_interest %>%
-  ungroup() %>%
-  select(-season, -ban_date, -time_frame, -Date) %>%
-  group_by(ID) %>%
-  pivot_wider(names_from = ban_period, values_from = av_interest) %>%
-  mutate(t.test= )
+sig_df <- data.frame(matrix(unlist(test1), nrow=length(test1), byrow=TRUE)) %>%
+  rowid_to_column() %>%
+  select(rowid, X1, X3)
 
 
+sig_df<- sig_df %>%
+  mutate(p_value = if_else(X3<.05, "sig", "0"), 
+         coef_sign = if_else(X1<0, "neg", "pos"), 
+         sig_sign = paste(p_value, coef_sign, sep=" "))
+
+table(sig_df$sig_sign)
+
+
+
+# ID, test 1 coef, test 1 p value, test 2 coef, test 2 p-value, interest at each ban_period 
+
+
+sig_vis <- left_join(df, sig_df, by=c("ID" = "rowid")) %>%
+  pivot_longer(3:4, names_to= "ban_period", values_to = "av_interest") %>%
+  na.omit()
+
+ggplot(sig_vis, aes(x=factor(ban_period, level=c("banpre", "ban")), y=av_interest, 
+                             color= sig_sign, alpha=sig_sign))+
+  geom_point()+
+  geom_jitter()+
+  scale_color_manual(values=c("grey", "grey", "green", "red", "grey"))+
+  scale_alpha_manual()
+  
 
   
